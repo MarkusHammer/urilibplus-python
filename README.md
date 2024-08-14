@@ -6,7 +6,7 @@
 `urilibplus` is a Python module designed to simplify the interaction and manipulation of URIs. It provides the `URI` class, which encapsulates URI operations into a consistent and user-friendly interface.
 With this module, you can easily handle URIs, including tasks such as encoding, validation, and manipulation.
 
-[Documentation](https://MarkusHammer.gthub.io/urilibplus-python)
+[Documentation](https://MarkusHammer.github.io/urilibplus-python)
 
 ## Setup
 
@@ -46,7 +46,7 @@ print(uri.encode(quote = True)) #outputs "http%3A%2F%2Fuser%3Apass%40host%3A1234
 
 ### Path Manipulation
 
-Also see the [docs](https://MarkusHammer.gthub.io/urilibplus-python) for the `URIPath` object, an object for `URI`s that works exactly like a `pathlib` path.
+Also see the [docs](https://MarkusHammer.github.io/urilibplus-python) for the `URIPath` object, an object for `URI`s that works exactly like a `pathlib` path.
 Every `URI` object makes use of a `URIPath` object.
 
 ```python
@@ -56,7 +56,7 @@ print(uri.encode())  # outputs "http://user:pass@host:1234/path/subpath/suberpat
 
 ### And More
 
-There are a handfull of other ease of use features that this module provides, feel free to reference the [documentation](https://MarkusHammer.gthub.io/urilibplus-python) for more information.
+There are a handfull of other ease of use features that this module provides, feel free to reference the [documentation](https://MarkusHammer.github.io/urilibplus-python) for more information.
 
 ## Licence
 
