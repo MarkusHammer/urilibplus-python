@@ -1,0 +1,53 @@
+test_negative_index (urilibplus.tests.tools_tests.AbsIndexTests.test_negative_index)
+`test_negative_index` ... ok
+test_positive_index (urilibplus.tests.tools_tests.AbsIndexTests.test_positive_index)
+`test_positive_index` ... ok
+test_random_range (urilibplus.tests.tools_tests.AbsIndexTests.test_random_range)
+`test_random_range` ... ok
+test_random_range_drifting (urilibplus.tests.tools_tests.AbsIndexTests.test_random_range_drifting)
+`test_random_range_drifting` ... ok
+test_direct (urilibplus.tests.tools_tests.TestIterFlatten.test_direct)
+`test_direct` ... ok
+test_flatten (urilibplus.tests.tools_tests.TestIterFlatten.test_flatten)
+`test_flatten` ... ok
+test_flatten_except (urilibplus.tests.tools_tests.TestIterFlatten.test_flatten_except)
+`test_flatten_except` ... ok
+test_passthrough (urilibplus.tests.tools_tests.TestPassthroughFirst.test_passthrough)
+`test_passthrough` ... ok
+test_direct (urilibplus.tests.tools_tests.TestSliceToRange.test_direct)
+`test_direct` ... ok
+test_negative_wrap (urilibplus.tests.tools_tests.TestSliceToRange.test_negative_wrap)
+`test_direct` ... ok
+test_example_deduplication (urilibplus.tests.tools_tests.TestStringSinglify.test_example_deduplication)
+`test_example_deduplication` ... ok
+test_removes_duplicates (urilibplus.tests.tools_tests.TestStringSinglify.test_removes_duplicates)
+`test_removes_duplicates` ... ok
+test_creation (urilibplus.tests.module_tests.TestURIExample.test_creation)
+`test_creation` ... ok
+test_host (urilibplus.tests.module_tests.TestURIExample.test_host)
+`test_host` ... ok
+test_path (urilibplus.tests.module_tests.TestURIExample.test_path)
+`test_path` ... ok
+test_scheme (urilibplus.tests.module_tests.TestURIExample.test_scheme)
+`test_scheme` ... ok
+test_creation (urilibplus.tests.module_tests.TestURIPathExample.test_creation)
+`test_creation` ... ok
+test_iter (urilibplus.tests.module_tests.TestURIPathExample.test_iter)
+`test_iter` ... ok
+test_append (urilibplus.tests.module_tests.TestURIQueryExample.test_append)
+`test_append` ... ok
+test_creation (urilibplus.tests.module_tests.TestURIQueryExample.test_creation)
+`test_creation` ... ok
+test_encode (urilibplus.tests.module_tests.TestURIQueryExample.test_encode)
+`test_encode` ... ok
+test_get_values (urilibplus.tests.module_tests.TestURIQueryExample.test_get_values)
+`test_get_values` ... ok
+test_len (urilibplus.tests.module_tests.TestURIQueryExample.test_len)
+`test_len` ... ok
+test_set_values (urilibplus.tests.module_tests.TestURIQueryExample.test_set_values)
+`test_append` ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.049s
+
+OK

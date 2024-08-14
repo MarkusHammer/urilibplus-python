@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>urilibplus.uri_query API documentation</title>
+<meta name="description" content="`uri_query` …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>urilibplus.uri_query</code></h1>
+</header>
+<section id="section-intro">
+<p><code>uri_query</code></p>
+<p>Holds the <code><a title="urilibplus.uri_query.URIQuery" href="#urilibplus.uri_query.URIQuery">URIQuery</a></code> class and reated imports.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="urilibplus.uri_query.URIQuery"><code class="flex name class">
+<span>class <span class="ident">URIQuery</span></span>
+<span>(</span><span>content: Union[str, List[Tuple[str, str]], Dict[str, str], ForwardRef('<a title="urilibplus.uri_query.URIQuery" href="#urilibplus.uri_query.URIQuery">URIQuery</a>'), ForwardRef(None)] = None, *, unquote: bool = False, requote: bool = False, force_case: Literal['upper', 'lower', 'preserve'] = 'preserve', quote_safe: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="urilibplus.uri_query.URIQuery" href="#urilibplus.uri_query.URIQuery">URIQuery</a></code></p>
+<p>A class used to manipulate and use a URI query in python easily.</p>
+<p>NOTE: while this class acts and appears very similar to a tuple of dictionary items,
+it is not, as it allows for duplacate keys, and requires the ordering to be preserved.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class URIQuery(UserList):
+    &#34;&#34;&#34;
+    `URIQuery`
+
+    A class used to manipulate and use a URI query in python easily.
+    
+    NOTE: while this class acts and appears very similar to a tuple of dictionary items,
+    it is not, as it allows for duplacate keys, and requires the ordering to be preserved.
+    &#34;&#34;&#34;
+
+    def __parse(self, querystr:str) -&gt; List[Tuple[str, str]]:
+        parsed = uriqueryparse(querystr, keep_blank_values=True, strict_parsing = True)
+        return parsed if not self.unquote else [(uriunquote(k), uriunquote(v)) for k,v in parsed]
+
+    def __init__(self,
+                 content:Union[str, List[Tuple[str, str]], Dict[str, str], &#39;URIQuery&#39;, None]= None,
+                 *,
+                 unquote:bool = False, #unquote values when unencoding strings
+                 requote: bool = False, #requote values when normalizing to string
+                 force_case: Literal[&#34;upper&#34;, &#34;lower&#34;, &#34;preserve&#34;] = &#34;preserve&#34;,
+                 quote_safe: str = &#34;&#34;
+                ):
+        self.unquote:bool = unquote
+        self.requote:bool = requote
+        self.quote_safe:str = quote_safe
+        self.force_case: Literal[&#34;upper&#34;, &#34;lower&#34;, &#34;preserve&#34;] = force_case
+        self.data:List[Tuple[str, str]]
+
+        if isinstance(content, (dict, URIQuery)):
+            content = list(content.items())
+        elif isinstance(content, str):
+            content = content.strip().lstrip(&#34;?&#34;).lstrip()
+            if content == &#34;&#34;:
+                content = None
+            else:
+                if &#34;=&#34; not in content:
+                    #normaize a nonstandard query with a empty value while still in string form
+                    content += &#34;=&#34;
+                content = self.__parse(content)
+
+        super().__init__(content)
+
+    def __bool__(self):
+        return not self.isempty()
+
+    def __lshift__(self, count:int) -&gt; &#39;URIQuery&#39;:
+        c = self.copy()
+        if count &gt; 0:
+            for _ in range(count):
+                c.append(c.pop(0))
+        else:
+            for _ in range(abs(count)):
+                c.insert(0, c.pop(-1))
+        return c
+
+    def __rshift__(self, count:int) -&gt; &#39;URIQuery&#39;:
+        return self &lt;&lt; -count
+
+    def __add__(self,
+                other:Union[str, Tuple[str, str], Iterable[Tuple[str, str]], &#39;URIQuery&#39;]
+               ) -&gt; &#39;URIQuery&#39;:
+        c = self.copy()
+
+        if isinstance(other, str):
+            other = self.__parse(other)
+        elif isinstance(other, URIQuery):
+            other = other.data
+        elif (isinstance(other, tuple) and
+              len(other) == 2 and
+              isinstance(other[0], str) and
+              isinstance(other[1], str)
+             ):
+            other = [cast(Tuple[str, str], other)]
+        else:
+            other = list(cast(Iterable[Tuple[str, str]], other))
+
+        c.data += other
+
+        return c
+
+    def __len__(self):
+        return len(self.data)
+
+    def append(self, item:Union[str, Tuple[str, str], Iterable[Tuple[str, str]]]):
+        #we can use the __add__ opperator, as this appcompishes the same thing
+        self.data = list(self + item)
+
+    def count(self, item:Union[str, Tuple[str, str]]) -&gt; int:
+        if isinstance(item, str):
+            parsed = self.__parse(item)
+            if len(parsed) == 1:
+                item = parsed[0]
+            else:
+                raise TypeError(item)
+
+        return super().count(item)
+
+    def index(self,                                        #pylint:disable=arguments-differ
+              item:Union[str, Tuple[str, str]],
+              start:Union[int, SupportsIndex] = 0,
+              stop:Union[int, SupportsIndex] = sys_maxsize
+             ) -&gt; int:
+        if isinstance(item, str):
+            parsed = self.__parse(item)
+            if len(parsed) == 1:
+                item = parsed[0]
+            else:
+                raise TypeError(item)
+
+        return super().index(item, start, stop)
+
+    def insert(self, i:int, item:Union[str, Tuple[str, str]]):
+        if isinstance(item, str):
+            parsed = self.__parse(item)
+            if len(parsed) == 1:
+                item = parsed[0]
+            else:
+                raise TypeError(item)
+
+        super().insert(i, item)
+
+    def remove(self, item:Union[str, Tuple[str, str]]):
+        if isinstance(item, str):
+            parsed = self.__parse(item)
+            if len(parsed) == 1:
+                item = parsed[0]
+            else:
+                raise TypeError(item)
+
+        super().remove(item)
+
+    def querykeys(self, *values:str) -&gt; Iterable[str]:
+        &#34;&#34;&#34;
+        `querykeys`
+
+        Returns:
+            An iterable with all keys of this query,
+            or only the keys with one of the exact `*values` given,
+            if any `*values` are given.
+        &#34;&#34;&#34;
+        return (k for k,v in self if len(values) &lt;= 0 or v in values)
+
+    def queryvalues(self, *keys:str) -&gt; Iterable[str]:
+        &#34;&#34;&#34;
+        `queryvalues`
+
+        Returns:
+            An iterable with all values of this query,
+            or only the values with one of the exact `*keys` given,
+            if any `*keys` are given.
+        &#34;&#34;&#34;
+        return (v for k,v in self if len(keys) &lt;= 0 or k in keys)
+
+    def items(self, *kvpairs:Tuple[str,str]) -&gt; Iterable[Tuple[str, str]]:
+        &#34;&#34;&#34;
+        `items`
+
+        Returns:
+            An iterable with all items of this query (formated as a tuple of `(&#34;key&#34;, &#34;value&#34;)`),
+            or only the values with one of the exact `*kvpairs` given,
+            if any `*kvpairs` are given.
+        &#34;&#34;&#34;
+        return (self.data if len(kvpairs) &lt;= 0 else((k,v) for k,v in self if (k,v) in kvpairs))
+
+    def keyindexes(self, *keys:str) -&gt; Tuple[int, ...]:
+        &#34;&#34;&#34;
+        `keyindexes`
+
+        Returns:
+            An iterable with all indexes of all entries with one of the exact `*keys` in this query.
+        &#34;&#34;&#34;
+        return tuple(i for i,(k,v) in enumerate(self) if k in keys)
+
+    def valueindexes(self, *values:str) -&gt; Tuple[int, ...]:
+        &#34;&#34;&#34;
+        `valueindexes`
+
+        Returns:
+            An iterable with all indexes of all entries
+            with one of the exact `*value` in this query.
+        &#34;&#34;&#34;
+        return tuple(i for i,(k,v) in enumerate(self) if v in values)
+
+    #dictionary like methods
+    def getvalues(self, key:str) -&gt; Tuple[str, ...]:
+        &#34;&#34;&#34;
+        `getvalues`
+
+        A dictionary like get method.
+
+        Returns:
+            A tuple with all values found with the given `key`.
+        &#34;&#34;&#34;
+        return tuple(self.queryvalues(key))
+
+    #dictionary like methods
+    def setvalues(self, key:str, *values:str):
+        &#34;&#34;&#34;
+        `setvalues`
+
+        A dictionary like get method.
+
+        Sets every value in query with the key `key` to the single given value in `*values`,
+        or if multiple `*values` are given,
+        then it will set every key in order with a value from `*values`.
+        With multiple `*values`, it&#39;s expected that the quantity of `*values`
+        match the quantity of entries in the query with `key`.
+        &#34;&#34;&#34;
+        inds = self.keyindexes(key)
+
+        if len(inds) != len(values) and len(values) != 1:
+            raise TypeError(values)
+
+        for vi, qi in enumerate(inds):
+            if len(values) != 1:
+                value = values[vi]
+            else:
+                value = values[0]
+
+            self[qi] = (key, value)
+
+    def delkey(self, key:str):
+        &#34;&#34;&#34;
+        `delkey`
+
+        Deletes every entry in the query with key `key`.
+        &#34;&#34;&#34;
+        for i in reversed(self.keyindexes(key)):
+            del self[i]
+
+    def isempty(self) -&gt; bool:
+        &#34;&#34;&#34;
+        `isempty`
+
+        Returns:
+            `True` if there are no keys or values in this query, otherwise `False`.
+        &#34;&#34;&#34;
+        return len(self) &lt;= 0
+
+    def iskeyempty(self, key:str, all_values:bool = False) -&gt; bool:
+        &#34;&#34;&#34;
+        `iskeyempty`
+
+        Arguments:
+            `key` -- The key to check the value of.
+
+        Keyword Arguments:
+            `all_values` -- If `True`, `True` will be returned only if *all* values are empty,
+                not just one.
+        &#34;&#34;&#34;
+        return (all if all_values else any)(v == &#34;&#34; for v in self.queryvalues(key))
+
+    def encode(self,
+               quote: Optional[bool] = None,
+               quote_safe:Optional[str] = None,
+               force_case: Optional[Literal[&#34;upper&#34;, &#34;lower&#34;, &#34;preserve&#34;]] = None
+              ) -&gt; str:
+        &#34;&#34;&#34;
+        `encode`
+
+        Keyword Arguments:
+            `quoted` -- If not `None`, the URI will be quoted, if `True`; or unquoted, if `False`,
+                with `None` defaulting to the objects `quote` attribute.
+            `quote_safe` -- If quoting, these characters will be excluded when quoting.
+            `force_case` -- If not `None`, the query&#39;s case will be converted to the given case, 
+                with `None` defaulting to the objects `force_case` attribute for how case should
+                be handled.
+
+        Returns:
+            This `URIQuery` object, encoded as a string.
+        &#34;&#34;&#34;
+        #pylint:disable=unnecessary-lambda-assignment
+
+        if force_case is not None and force_case not in (&#34;upper&#34;, &#34;lower&#34;, &#34;preserve&#34;):
+            raise AttributeError
+
+        if quote is None:
+            quote = self.requote
+
+        if force_case is None:
+            force_case = self.force_case
+
+        if quote_safe is None:
+            quote_safe = self.quote_safe
+
+        qmet = passthrough_first
+        if quote:
+            qmet = lambda s: uriquote(s, quote_safe)
+
+        cmet = passthrough_first
+        if force_case != &#34;preserve&#34;:
+            cmet = (lambda s: s.upper()) if force_case == &#34;upper&#34; else (lambda s: s.lower())
+
+        quote_via=lambda *p :cmet(qmet(passthrough_first(*p)))
+        #we must use items instead of the query dict to ensure that the order remains intace
+        encoded = uriqueryunparse(tuple(self.items()), doseq=True, quote_via=quote_via)
+
+        _self_tup = tuple(self.items())
+        if len(_self_tup) == 1 and _self_tup[0][0] != &#34;&#34; and _self_tup[0][1] == &#34;&#34;:
+            #reformat a single, valueless query as just a string of the query key
+            encoded = encoded.rstrip(&#34;=&#34;)
+
+        return encoded
+    __str__ = encode
+    __repr__ = encode
+
+    def validate(self, encoded:bool = False) -&gt; bool:
+        &#34;&#34;&#34;
+        `validate`
+
+        Returns:
+            True if all characters in this object are allowed in a URI query.
+        &#34;&#34;&#34;
+        if encoded:
+            return not CharacterSets.invalid_check(CharacterSets.QUERY, self.encode(True))
+        else:
+            return not CharacterSets.invalid_check(CharacterSets.QUERY,
+                                                   *self.querykeys(),
+                                                   *self.queryvalues()
+                                                  )
+
+    def search(self,
+               keymatch:Optional[Union[str, Pattern]] = None,
+               valmatch:Optional[Union[str, Pattern]] = None
+              ) -&gt; Iterable[Tuple[Optional[Match], Optional[Match]]]:
+        &#34;&#34;&#34;
+        `search`
+
+        Keyword Arguments:
+            keymatch -- A optional regex pattern to match keys with.
+            valmatch -- A optional regex pattern to match values with.
+
+        Returns:
+            An iterable of tuples, each with a match either for a key and/or value,
+            with the format of `(Optional[Match], Optional[Match])`,
+            the first being matches for keys, the second for values.
+        &#34;&#34;&#34;
+        #pylint:disable=unnecessary-lambda, unnecessary-lambda-assignment
+        ksch = lambda *a, **k: None
+        if isinstance(keymatch, str):
+            keymatch = cast(Pattern, regexcompile(keymatch))
+        if keymatch is not None:
+            ksch = lambda s: keymatch.search(s)
+
+        vsch = lambda *a, **k: None
+        if isinstance(valmatch, str):
+            valmatch = cast(Pattern, regexcompile(valmatch))
+        if valmatch is not None:
+            vsch = lambda s: valmatch.search(s)
+
+        return ((ksch(k),vsch(v)) for k,v in self if ksch(k) is not None or vsch(v) is not None)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>collections.UserList</li>
+<li>collections.abc.MutableSequence</li>
+<li>collections.abc.Sequence</li>
+<li>collections.abc.Reversible</li>
+<li>collections.abc.Collection</li>
+<li>collections.abc.Sized</li>
+<li>collections.abc.Iterable</li>
+<li>collections.abc.Container</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="urilibplus.uri_query.URIQuery.append"><code class="name flex">
+<span>def <span class="ident">append</span></span>(<span>self, item: Union[str, Tuple[str, str], Iterable[Tuple[str, str]]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.append(value) &ndash; append value to the end of the sequence</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.count"><code class="name flex">
+<span>def <span class="ident">count</span></span>(<span>self, item: Union[str, Tuple[str, str]]) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.count(value) -&gt; integer &ndash; return number of occurrences of value</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.delkey"><code class="name flex">
+<span>def <span class="ident">delkey</span></span>(<span>self, key: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>delkey</code></p>
+<p>Deletes every entry in the query with key <code>key</code>.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.encode"><code class="name flex">
+<span>def <span class="ident">encode</span></span>(<span>self, quote: Optional[bool] = None, quote_safe: Optional[str] = None, force_case: Optional[Literal['upper', 'lower', 'preserve']] = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>encode</code></p>
+<p>Keyword Arguments:
+<code>quoted</code> &ndash; If not <code>None</code>, the URI will be quoted, if <code>True</code>; or unquoted, if <code>False</code>,
+with <code>None</code> defaulting to the objects <code>quote</code> attribute.
+<code>quote_safe</code> &ndash; If quoting, these characters will be excluded when quoting.
+<code>force_case</code> &ndash; If not <code>None</code>, the query's case will be converted to the given case,
+with <code>None</code> defaulting to the objects <code>force_case</code> attribute for how case should
+be handled.</p>
+<h2 id="returns">Returns</h2>
+<p>This <code><a title="urilibplus.uri_query.URIQuery" href="#urilibplus.uri_query.URIQuery">URIQuery</a></code> object, encoded as a string.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.getvalues"><code class="name flex">
+<span>def <span class="ident">getvalues</span></span>(<span>self, key: str) ‑> Tuple[str, ...]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>getvalues</code></p>
+<p>A dictionary like get method.</p>
+<h2 id="returns">Returns</h2>
+<p>A tuple with all values found with the given <code>key</code>.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.index"><code class="name flex">
+<span>def <span class="ident">index</span></span>(<span>self, item: Union[str, Tuple[str, str]], start: Union[int, SupportsIndex] = 0, stop: Union[int, SupportsIndex] = 9223372036854775807) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.index(value, [start, [stop]]) -&gt; integer &ndash; return first index of value.
+Raises ValueError if the value is not present.</p>
+<p>Supporting start and stop arguments is optional, but
+recommended.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.insert"><code class="name flex">
+<span>def <span class="ident">insert</span></span>(<span>self, i: int, item: Union[str, Tuple[str, str]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.insert(index, value) &ndash; insert value before index</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.isempty"><code class="name flex">
+<span>def <span class="ident">isempty</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>isempty</code></p>
+<h2 id="returns">Returns</h2>
+<p><code>True</code> if there are no keys or values in this query, otherwise <code>False</code>.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.iskeyempty"><code class="name flex">
+<span>def <span class="ident">iskeyempty</span></span>(<span>self, key: str, all_values: bool = False) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>iskeyempty</code></p>
+<h2 id="arguments">Arguments</h2>
+<p><code>key</code> &ndash; The key to check the value of.</p>
+<p>Keyword Arguments:
+<code>all_values</code> &ndash; If <code>True</code>, <code>True</code> will be returned only if <em>all</em> values are empty,
+not just one.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.items"><code class="name flex">
+<span>def <span class="ident">items</span></span>(<span>self, *kvpairs: Tuple[str, str]) ‑> Iterable[Tuple[str, str]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>items</code></p>
+<h2 id="returns">Returns</h2>
+<p>An iterable with all items of this query (formated as a tuple of <code>("key", "value")</code>),
+or only the values with one of the exact <code>*kvpairs</code> given,
+if any <code>*kvpairs</code> are given.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.keyindexes"><code class="name flex">
+<span>def <span class="ident">keyindexes</span></span>(<span>self, *keys: str) ‑> Tuple[int, ...]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>keyindexes</code></p>
+<h2 id="returns">Returns</h2>
+<p>An iterable with all indexes of all entries with one of the exact <code>*keys</code> in this query.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.querykeys"><code class="name flex">
+<span>def <span class="ident">querykeys</span></span>(<span>self, *values: str) ‑> Iterable[str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>querykeys</code></p>
+<h2 id="returns">Returns</h2>
+<p>An iterable with all keys of this query,
+or only the keys with one of the exact <code>*values</code> given,
+if any <code>*values</code> are given.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.queryvalues"><code class="name flex">
+<span>def <span class="ident">queryvalues</span></span>(<span>self, *keys: str) ‑> Iterable[str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>queryvalues</code></p>
+<h2 id="returns">Returns</h2>
+<p>An iterable with all values of this query,
+or only the values with one of the exact <code>*keys</code> given,
+if any <code>*keys</code> are given.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.remove"><code class="name flex">
+<span>def <span class="ident">remove</span></span>(<span>self, item: Union[str, Tuple[str, str]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.remove(value) &ndash; remove first occurrence of value.
+Raise ValueError if the value is not present.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.search"><code class="name flex">
+<span>def <span class="ident">search</span></span>(<span>self, keymatch: Union[str, re.Pattern, ForwardRef(None)] = None, valmatch: Union[str, re.Pattern, ForwardRef(None)] = None) ‑> Iterable[Tuple[Optional[re.Match], Optional[re.Match]]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>search</code></p>
+<p>Keyword Arguments:
+keymatch &ndash; A optional regex pattern to match keys with.
+valmatch &ndash; A optional regex pattern to match values with.</p>
+<h2 id="returns">Returns</h2>
+<p>An iterable of tuples, each with a match either for a key and/or value,
+with the format of <code>(Optional[Match], Optional[Match])</code>,
+the first being matches for keys, the second for values.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.setvalues"><code class="name flex">
+<span>def <span class="ident">setvalues</span></span>(<span>self, key: str, *values: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>setvalues</code></p>
+<p>A dictionary like get method.</p>
+<p>Sets every value in query with the key <code>key</code> to the single given value in <code>*values</code>,
+or if multiple <code>*values</code> are given,
+then it will set every key in order with a value from <code>*values</code>.
+With multiple <code>*values</code>, it's expected that the quantity of <code>*values</code>
+match the quantity of entries in the query with <code>key</code>.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.validate"><code class="name flex">
+<span>def <span class="ident">validate</span></span>(<span>self, encoded: bool = False) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>validate</code></p>
+<h2 id="returns">Returns</h2>
+<p>True if all characters in this object are allowed in a URI query.</p></div>
+</dd>
+<dt id="urilibplus.uri_query.URIQuery.valueindexes"><code class="name flex">
+<span>def <span class="ident">valueindexes</span></span>(<span>self, *values: str) ‑> Tuple[int, ...]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>valueindexes</code></p>
+<h2 id="returns">Returns</h2>
+<p>An iterable with all indexes of all entries
+with one of the exact <code>*value</code> in this query.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="urilibplus" href="index.html">urilibplus</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="urilibplus.uri_query.URIQuery" href="#urilibplus.uri_query.URIQuery">URIQuery</a></code></h4>
+<ul class="two-column">
+<li><code><a title="urilibplus.uri_query.URIQuery.append" href="#urilibplus.uri_query.URIQuery.append">append</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.count" href="#urilibplus.uri_query.URIQuery.count">count</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.delkey" href="#urilibplus.uri_query.URIQuery.delkey">delkey</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.encode" href="#urilibplus.uri_query.URIQuery.encode">encode</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.getvalues" href="#urilibplus.uri_query.URIQuery.getvalues">getvalues</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.index" href="#urilibplus.uri_query.URIQuery.index">index</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.insert" href="#urilibplus.uri_query.URIQuery.insert">insert</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.isempty" href="#urilibplus.uri_query.URIQuery.isempty">isempty</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.iskeyempty" href="#urilibplus.uri_query.URIQuery.iskeyempty">iskeyempty</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.items" href="#urilibplus.uri_query.URIQuery.items">items</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.keyindexes" href="#urilibplus.uri_query.URIQuery.keyindexes">keyindexes</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.querykeys" href="#urilibplus.uri_query.URIQuery.querykeys">querykeys</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.queryvalues" href="#urilibplus.uri_query.URIQuery.queryvalues">queryvalues</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.remove" href="#urilibplus.uri_query.URIQuery.remove">remove</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.search" href="#urilibplus.uri_query.URIQuery.search">search</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.setvalues" href="#urilibplus.uri_query.URIQuery.setvalues">setvalues</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.validate" href="#urilibplus.uri_query.URIQuery.validate">validate</a></code></li>
+<li><code><a title="urilibplus.uri_query.URIQuery.valueindexes" href="#urilibplus.uri_query.URIQuery.valueindexes">valueindexes</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

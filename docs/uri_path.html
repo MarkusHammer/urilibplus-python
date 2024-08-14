@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>urilibplus.uri_path API documentation</title>
+<meta name="description" content="`uri_path` …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>urilibplus.uri_path</code></h1>
+</header>
+<section id="section-intro">
+<p><code>uri_path</code></p>
+<p>Holds the <code><a title="urilibplus.uri_path.URIPath" href="#urilibplus.uri_path.URIPath">URIPath</a></code> class and reated imports.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="urilibplus.uri_path.URIPath"><code class="flex name class">
+<span>class <span class="ident">URIPath</span></span>
+<span>(</span><span>*path: Union[str, os.PathLike, Iterable[Union[str, os.PathLike]]], unquote: bool = False, requote: bool = False, quote_safe: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="urilibplus.uri_path.URIPath" href="#urilibplus.uri_path.URIPath">URIPath</a></code></p>
+<p>A class used to manipulate and use a URI path in python easily.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class URIPath(PurePosixPath, PathLike, MutableSequenceABC[str]):
+    &#34;&#34;&#34;
+    `URIPath`
+
+    A class used to manipulate and use a URI path in python easily.
+    &#34;&#34;&#34;
+
+    _USE_NEW_PUREPATH_INIT_METHOD:bool = version_info.major &gt; 3 or (version_info.major == 3 and
+                                                                    version_info.minor &gt;= 12)
+    _CACHEING_ANCESTORS:Tuple[type, ...] = (PurePosixPath, PurePath, PureWindowsPath)
+    _CACHE_ATTR_NAMES:Iterator[LiteralString] = cast(Iterator[LiteralString],
+                                                     iter_flatten(
+                                                         (getattr(c, &#34;__slots__&#34;, []) for c in _CACHEING_ANCESTORS), #pylint:disable=line-too-long
+                                                         str
+                                                         )
+                                                     )
+    @property
+    def raw(self) -&gt; List[str]:
+        &#34;&#34;&#34;
+        `__raw`
+
+        Used internally, do not modify without express intent.
+
+        Returns:
+            The internal list of strings used by `Path` types to create paths from.
+        &#34;&#34;&#34;
+        return self._raw_paths
+    @raw.setter
+    def raw(self, value:List[str]):
+        #without this, the caches parts of the path wont update when we manually change the content
+        for attr in self._CACHE_ATTR_NAMES:
+            if hasattr(self, attr):
+                delattr(self, attr)
+        self._raw_paths = value
+    @raw.deleter
+    def raw(self):
+        # you don&#39;t just delete raw, but you can clear it...
+        self.raw = []
+
+    def __new__(cls,
+                *path:Union[str, PathLike, Iterable[Union[str, PathLike]]],
+                unquote: bool = False,
+                requote:bool = False,
+                quote_safe:str = &#34;&#34;
+               ) -&gt; &#39;URIPath&#39;:
+        # don&#39;t run the inherited __new__ methods,
+        # it automatically makes the path in the OS local type and confuses type checkers
+        if cls._USE_NEW_PUREPATH_INIT_METHOD or TYPE_CHECKING:
+            return object.__new__(cls)
+        else:
+            return cls._from_parts(tuple(iter_flatten(path, str)))
+
+    def __init__(self,
+                 *path:Union[str, PathLike, Iterable[Union[str, PathLike]]],
+                 unquote:bool = False,
+                 requote:bool = False,
+                 quote_safe:str = &#34;&#34;
+                ):
+        self.unquote:bool = unquote
+        self.requote:bool = requote
+        self.quote_safe = quote_safe
+
+        if self._USE_NEW_PUREPATH_INIT_METHOD:
+            super().__init__(*tuple(iter_flatten(path, str)))
+
+    def __iter__(self):
+        return iter(self.parts)
+
+    @overload
+    def __getitem__(self, index:int) -&gt; str: ...
+    @overload
+    def __getitem__(self, index:slice) -&gt; List[str]: ...
+    def __getitem__(self, index:Union[int, slice]) -&gt; Union[str, List[str]]:
+        return list(self.parts[index])
+
+    def __setitem__(self,
+                    index:Union[int, slice],
+                    value:Union[str, PathLike, Iterable[Union[str, PathLike]]]
+                   ):
+        c = list(self)
+
+        value = self.copy(value)
+
+        if isinstance(index, int):
+            c[index] = str(value)
+        else:
+            c[index] = list(value)
+
+        self.raw = c
+
+    def __delitem__(self, index:Union[int, slice]):
+        c = list(self)
+        del c[index]
+        self.raw = c
+
+    def __bool__(self):
+        return not self.isempty()
+
+    def __len__(self):
+        return len(self.parts)
+
+    def __truediv__(self, other:Union[str, PathLike, Iterable[Union[str, PathLike]]]): #self / other
+        c = self.copy()
+        c.append(other)
+        return c
+
+    @overload
+    def __contains__(self,                                                     #type:ignore
+                     other:Union[str, PathLike, Iterable[Union[str, PathLike]]]
+                    ) -&gt; bool: ...
+    @overload
+    def __contains__(self, other:object) -&gt; NotImplementedType: ...
+    def __contains__(self,
+                     other:Union[str, PathLike, Iterable[Union[str, PathLike]], object]
+                    ) -&gt; Union[bool, NotImplementedType]:
+        if not isinstance(other, (str, PathLike, Iterable)):
+            return NotImplemented
+        return all((x in list(self)) for x in self.copy(other))
+
+    def copy(self,
+             *content_override:Union[str, PathLike, Iterable[Union[str, PathLike]]]
+            ) -&gt; &#39;URIPath&#39;:
+        &#34;&#34;&#34;
+        `copy`
+
+        `*content_override` -- When any of these arguments are set,
+            the copy will instead be initialised with these values as the path&#39;s content.
+
+        Returns:
+            A complete, deep, copy of this object; with the contents optionally overridden.
+        &#34;&#34;&#34;
+        kwargs = {
+            &#34;unquote&#34;:self.unquote,
+            &#34;requote&#34;:self.requote,
+            &#34;quote_safe&#34;:self.quote_safe
+        }
+
+        return URIPath(*((self,) if len(content_override) &lt;= 0 else content_override), **kwargs)
+    __copy__ = copy
+    __deepcopy__ = copy
+
+    def append(self, value:Union[str, PathLike, Iterable[Union[str, PathLike]]]):
+        appendage = []
+        if isinstance(value, URIPath) :
+            if all(not x.startswith(&#34;/&#34;) for x in value.raw):
+                appendage = value.raw
+            else:
+                appendage = list(value[1:] if value[0] == &#34;/&#34; else value[:])
+        else:
+            appendage = self.copy(value).raw
+        self.raw = self.raw + appendage
+
+    def count(self, value:str) -&gt; int:
+        return list(self).count(value)
+
+    def index(self, value:str, start:int = 0, stop:int = sys_maxsize) -&gt; int:
+        return list(self).index(value, start, stop)
+
+    def rindex(self, value:str, start:int = 0, stop:Optional[int] = None) -&gt; int:
+        &#34;&#34;&#34;
+        `rindex`
+
+        Similar to `index`, but searching in reverse order.
+
+        Arguments:
+            value -- The value to search for.
+
+        Keyword Arguments:
+            start -- The lower index to limit searches at, defaults to 0.
+            stop -- The higher index to limit searches at, defaults to `None`,
+                which equates to stopping at the end of the list.
+
+        Returns:
+            The index found.
+        &#34;&#34;&#34;
+        return (len(self) - self[start:stop][-1::-1].index(value) - 1) + abs(start)
+
+    def insert(self, index:int, value:Union[str, PathLike, Iterable[Union[str, PathLike]]]):
+        value = self.copy(value).raw
+        self.raw = self.raw[:index] + value + self.raw[index:]
+
+    def remove(self, value:str):
+        newraw = list(self.copy(value))
+        newraw.remove(value)
+        self.raw = newraw
+
+    def isempty(self) -&gt; bool:
+        &#34;&#34;&#34;
+        `isempty`
+
+        Returns:
+            `True` if the path contains no segments, otherwise `False`.
+        &#34;&#34;&#34;
+        return len(self.raw) &lt;= 0
+
+    def encode(self, quote: Optional[bool] = None, quote_safe:Optional[str] = None) -&gt; str:
+        &#34;&#34;&#34;
+        `encode`
+
+        Keyword Arguments:
+            quoted -- If not `None`, the path will be quoted, if `True`; or unquoted, if `False`,
+                with `None` defaulting to the objects `quote` attribute.
+            quote_safe -- If quoting, these characters will be excluded when quoting.
+
+        Returns:
+            The path object, encoded as a string.
+        &#34;&#34;&#34;
+        if quote is None:
+            quote = self.requote
+
+        if quote_safe is None:
+            quote_safe = cast(str, self.quote_safe)
+
+        quote_safe += &#34;/&#34;
+
+        if not quote:
+            return super().__str__()
+        else:
+            seg = tuple(uriquote(x, quote_safe) for x in self)
+            if self[0] == &#34;/&#34;: #the root slash will be consitered a part, we need to preserve that
+                seg = (&#34;/&#34;, ) + seg[1:]
+            return super(URIPath, self.copy(*seg)).__str__()
+    __str__ = encode
+    __repr__ = encode
+
+    def validate(self, encoded:bool = False) -&gt; bool:
+        &#34;&#34;&#34;
+        `validate`
+
+        Returns:
+            True if all characters in this object are allowed in a URI&#39;s path.
+        &#34;&#34;&#34;
+        if encoded:
+            return not CharacterSets.invalid_check(CharacterSets.PATH, self.encode(True))
+        else:
+            return not CharacterSets.invalid_check(CharacterSets.SEGMENT, *tuple(self))
+
+    def segafter(self, value: str, last:bool = False) -&gt; Union[str, None]:
+        &#34;&#34;&#34;
+        `segafter`
+        
+        Retrieves the content of the after the first (or last)
+        path segment matching `value`, if any; otherwise None.
+
+        Arguments:
+            value -- The exact value of a segment to find.
+
+        Keyword Arguments:
+            last -- Instead of finding the first possible segment matching `value`,
+                find the last.
+
+        Returns:
+            The content of the segment comming after the found `value`,
+            or `None` if `value` was not found.
+        &#34;&#34;&#34;
+        if value not in self:
+            return None
+
+        ind = (self.rindex if last else self.index)(value)
+        if ind &gt;= len(self):
+            return None
+
+        return cast(str, self[ind + 1])
+
+    def segbefore(self, value: str, last:bool = False) -&gt; Union[str, None]:
+        &#34;&#34;&#34;
+        `segbefore`
+        
+        Retrieves the content of the before the first (or last)
+        path segment matching `value`, if any; otherwise None.
+
+        Arguments:
+            value -- The exact value of a segment to find.
+
+        Keyword Arguments:
+            last -- Instead of finding the first possible segment matching `value`,
+                find the last.
+
+        Returns:
+            The content of the segment comming before the found `value`,
+            or `None` if `value` was not found.
+        &#34;&#34;&#34;
+        if value not in self:
+            return None
+
+        ind = (self.rindex if last else self.index)(value)
+        if ind &lt;= 0:
+            return None
+
+        return cast(str, self[ ind - 1])
+
+    def segsearch(self,
+                  pattern:Union[str, Pattern],
+                  include_all:bool = False
+                 ) -&gt; Iterable[Match]:
+        &#34;&#34;&#34;
+        `segsearch`
+
+        Searches every segment in the path for the given regex `pattern`,
+        returning any found as an iterable.
+
+        Arguments:
+            `pattern` -- The pattern to search for in each segment.
+
+        Keyword Arguments:
+            `include_all` -- Return every match found in a single segment, not just the first one.
+
+        Returns:
+            A iterable of found matches, in the same rough
+            order of the segment they where found in.
+
+        Yields:
+            A match found.
+        &#34;&#34;&#34;
+        if isinstance(pattern, str):
+            pattern = regexcompile(pattern)
+
+        for s in self:
+            m = pattern.search(s)
+            if include_all or m is not None:
+                yield cast(Match, m)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pathlib.PurePosixPath</li>
+<li>pathlib.PurePath</li>
+<li>os.PathLike</li>
+<li>abc.ABC</li>
+<li>collections.abc.MutableSequence</li>
+<li>collections.abc.Sequence</li>
+<li>collections.abc.Reversible</li>
+<li>collections.abc.Collection</li>
+<li>collections.abc.Sized</li>
+<li>collections.abc.Iterable</li>
+<li>collections.abc.Container</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="urilibplus.uri_path.URIPath.raw"><code class="name">prop <span class="ident">raw</span> : List[str]</code></dt>
+<dd>
+<div class="desc"><p><code>__raw</code></p>
+<p>Used internally, do not modify without express intent.</p>
+<h2 id="returns">Returns</h2>
+<p>The internal list of strings used by <code>Path</code> types to create paths from.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def raw(self) -&gt; List[str]:
+    &#34;&#34;&#34;
+    `__raw`
+
+    Used internally, do not modify without express intent.
+
+    Returns:
+        The internal list of strings used by `Path` types to create paths from.
+    &#34;&#34;&#34;
+    return self._raw_paths</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="urilibplus.uri_path.URIPath.append"><code class="name flex">
+<span>def <span class="ident">append</span></span>(<span>self, value: Union[str, os.PathLike, Iterable[Union[str, os.PathLike]]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.append(value) &ndash; append value to the end of the sequence</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.copy"><code class="name flex">
+<span>def <span class="ident">copy</span></span>(<span>self, *content_override: Union[str, os.PathLike, Iterable[Union[str, os.PathLike]]]) ‑> <a title="urilibplus.uri_path.URIPath" href="#urilibplus.uri_path.URIPath">URIPath</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>copy</code></p>
+<p><code>*content_override</code> &ndash; When any of these arguments are set,
+the copy will instead be initialised with these values as the path's content.</p>
+<h2 id="returns">Returns</h2>
+<p>A complete, deep, copy of this object; with the contents optionally overridden.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.count"><code class="name flex">
+<span>def <span class="ident">count</span></span>(<span>self, value: str) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.count(value) -&gt; integer &ndash; return number of occurrences of value</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.encode"><code class="name flex">
+<span>def <span class="ident">encode</span></span>(<span>self, quote: Optional[bool] = None, quote_safe: Optional[str] = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>encode</code></p>
+<p>Keyword Arguments:
+quoted &ndash; If not <code>None</code>, the path will be quoted, if <code>True</code>; or unquoted, if <code>False</code>,
+with <code>None</code> defaulting to the objects <code>quote</code> attribute.
+quote_safe &ndash; If quoting, these characters will be excluded when quoting.</p>
+<h2 id="returns">Returns</h2>
+<p>The path object, encoded as a string.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.index"><code class="name flex">
+<span>def <span class="ident">index</span></span>(<span>self, value: str, start: int = 0, stop: int = 9223372036854775807) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.index(value, [start, [stop]]) -&gt; integer &ndash; return first index of value.
+Raises ValueError if the value is not present.</p>
+<p>Supporting start and stop arguments is optional, but
+recommended.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.insert"><code class="name flex">
+<span>def <span class="ident">insert</span></span>(<span>self, index: int, value: Union[str, os.PathLike, Iterable[Union[str, os.PathLike]]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.insert(index, value) &ndash; insert value before index</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.isempty"><code class="name flex">
+<span>def <span class="ident">isempty</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>isempty</code></p>
+<h2 id="returns">Returns</h2>
+<p><code>True</code> if the path contains no segments, otherwise <code>False</code>.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.remove"><code class="name flex">
+<span>def <span class="ident">remove</span></span>(<span>self, value: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>S.remove(value) &ndash; remove first occurrence of value.
+Raise ValueError if the value is not present.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.rindex"><code class="name flex">
+<span>def <span class="ident">rindex</span></span>(<span>self, value: str, start: int = 0, stop: Optional[int] = None) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>rindex</code></p>
+<p>Similar to <code>index</code>, but searching in reverse order.</p>
+<h2 id="arguments">Arguments</h2>
+<p>value &ndash; The value to search for.</p>
+<p>Keyword Arguments:
+start &ndash; The lower index to limit searches at, defaults to 0.
+stop &ndash; The higher index to limit searches at, defaults to <code>None</code>,
+which equates to stopping at the end of the list.</p>
+<h2 id="returns">Returns</h2>
+<p>The index found.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.segafter"><code class="name flex">
+<span>def <span class="ident">segafter</span></span>(<span>self, value: str, last: bool = False) ‑> Optional[str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>segafter</code></p>
+<p>Retrieves the content of the after the first (or last)
+path segment matching <code>value</code>, if any; otherwise None.</p>
+<h2 id="arguments">Arguments</h2>
+<p>value &ndash; The exact value of a segment to find.</p>
+<p>Keyword Arguments:
+last &ndash; Instead of finding the first possible segment matching <code>value</code>,
+find the last.</p>
+<h2 id="returns">Returns</h2>
+<p>The content of the segment comming after the found <code>value</code>,
+or <code>None</code> if <code>value</code> was not found.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.segbefore"><code class="name flex">
+<span>def <span class="ident">segbefore</span></span>(<span>self, value: str, last: bool = False) ‑> Optional[str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>segbefore</code></p>
+<p>Retrieves the content of the before the first (or last)
+path segment matching <code>value</code>, if any; otherwise None.</p>
+<h2 id="arguments">Arguments</h2>
+<p>value &ndash; The exact value of a segment to find.</p>
+<p>Keyword Arguments:
+last &ndash; Instead of finding the first possible segment matching <code>value</code>,
+find the last.</p>
+<h2 id="returns">Returns</h2>
+<p>The content of the segment comming before the found <code>value</code>,
+or <code>None</code> if <code>value</code> was not found.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.segsearch"><code class="name flex">
+<span>def <span class="ident">segsearch</span></span>(<span>self, pattern: Union[str, re.Pattern], include_all: bool = False) ‑> Iterable[re.Match]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>segsearch</code></p>
+<p>Searches every segment in the path for the given regex <code>pattern</code>,
+returning any found as an iterable.</p>
+<h2 id="arguments">Arguments</h2>
+<p><code>pattern</code> &ndash; The pattern to search for in each segment.</p>
+<p>Keyword Arguments:
+<code>include_all</code> &ndash; Return every match found in a single segment, not just the first one.</p>
+<h2 id="returns">Returns</h2>
+<p>A iterable of found matches, in the same rough
+order of the segment they where found in.</p>
+<h2 id="yields">Yields</h2>
+<p>A match found.</p></div>
+</dd>
+<dt id="urilibplus.uri_path.URIPath.validate"><code class="name flex">
+<span>def <span class="ident">validate</span></span>(<span>self, encoded: bool = False) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>validate</code></p>
+<h2 id="returns">Returns</h2>
+<p>True if all characters in this object are allowed in a URI's path.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="urilibplus" href="index.html">urilibplus</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="urilibplus.uri_path.URIPath" href="#urilibplus.uri_path.URIPath">URIPath</a></code></h4>
+<ul class="two-column">
+<li><code><a title="urilibplus.uri_path.URIPath.append" href="#urilibplus.uri_path.URIPath.append">append</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.copy" href="#urilibplus.uri_path.URIPath.copy">copy</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.count" href="#urilibplus.uri_path.URIPath.count">count</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.encode" href="#urilibplus.uri_path.URIPath.encode">encode</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.index" href="#urilibplus.uri_path.URIPath.index">index</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.insert" href="#urilibplus.uri_path.URIPath.insert">insert</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.isempty" href="#urilibplus.uri_path.URIPath.isempty">isempty</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.remove" href="#urilibplus.uri_path.URIPath.remove">remove</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.rindex" href="#urilibplus.uri_path.URIPath.rindex">rindex</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.segafter" href="#urilibplus.uri_path.URIPath.segafter">segafter</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.segbefore" href="#urilibplus.uri_path.URIPath.segbefore">segbefore</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.segsearch" href="#urilibplus.uri_path.URIPath.segsearch">segsearch</a></code></li>
+<li><code><a title="urilibplus.uri_path.URIPath.validate" href="#urilibplus.uri_path.URIPath.validate">validate</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

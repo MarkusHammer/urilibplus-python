@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>urilibplus.tools API documentation</title>
+<meta name="description" content="`tools` …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>urilibplus.tools</code></h1>
+</header>
+<section id="section-intro">
+<p><code>tools</code></p>
+<p>Holds various tool and utility functions and classes for <code><a title="urilibplus" href="index.html">urilibplus</a></code>.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="urilibplus.tools.absindex"><code class="name flex">
+<span>def <span class="ident">absindex</span></span>(<span>index: int, reference_length: Union[Sized, int]) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="urilibplus.tools.absindex" href="#urilibplus.tools.absindex">absindex()</a></code></p>
+<p>Takes the given index and the legnth contex its
+used in and returns a absolute index that
+wraps a negative index into a positive one while
+throwing relevant errors for out of bounds indexes.</p>
+<h2 id="arguments">Arguments</h2>
+<p>index &ndash; The index in question.
+reference_length &ndash; The length of the object being sliced, or the <code>Sized</code> object itself.</p>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>Raised when an erroneous length is given.</dd>
+<dt><code>IndexError</code></dt>
+<dd>Raised when the given index is / would be out of bounds.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>The absolute index (will never be negative).</p></div>
+</dd>
+<dt id="urilibplus.tools.iter_flatten"><code class="name flex">
+<span>def <span class="ident">iter_flatten</span></span>(<span>it: Iterable[Union[Any, Iterable[Any]]], *excepttypes: type, only_self_iterate_guard: bool = True) ‑> Iterator[Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="urilibplus.tools.iter_flatten" href="#urilibplus.tools.iter_flatten">iter_flatten()</a></code></p>
+<p>'Flattens' a given iterable, meaning that it will return a iterator that when iterated, will
+yield every object from input iterator, unless that given object is an iterable,
+in which case it will first iterate fully though that iterable fully before
+continuing to iterate through the original input iterator; recursively.</p>
+<h2 id="arguments">Arguments</h2>
+<p><code>it</code> &ndash; The iterator to flatten recursively.
+<code>*excepttypes</code> &ndash; When encountering this type in an iterable,
+it will never be iterated itself, instead being yielded whole.
+<code>only_self_iterate_guard</code> &ndash; When <code>True</code>, any iterable object that only yields
+a single object which is equal to itself, it will not be iterated further,
+instead begin yielded.
+This is used to guard infinite iteration with objects that allow
+for themselves to be iterated even when they only contain
+a single object - such as strings.
+It is heavily advised to leave this <code>True</code>, unless it is explicitly
+causing issues with a certian use case.</p>
+<h2 id="yields">Yields</h2>
+<p>The object of the input iterable, and any objects within iterables in that initial iterator.</p></div>
+</dd>
+<dt id="urilibplus.tools.passthrough_first"><code class="name flex">
+<span>def <span class="ident">passthrough_first</span></span>(<span>*p: Any, **_) ‑> Union[Any, NoReturn]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="urilibplus.tools.passthrough_first" href="#urilibplus.tools.passthrough_first">passthrough_first()</a></code></p>
+<p>A simple function for use in filtering and sorting.
+Takes in any amount of args and kwargs, returning only the first arg given.</p>
+<h2 id="arguments">Arguments</h2>
+<p><code>*p</code> &ndash; Any amount of arguments, with only the first one given passed through.</p>
+<h2 id="returns">Returns</h2>
+<p>Only the first argument passed to this function.</p></div>
+</dd>
+<dt id="urilibplus.tools.singlify_str"><code class="name flex">
+<span>def <span class="ident">singlify_str</span></span>(<span>*in_strs: LiteralString) ‑> LiteralString</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="urilibplus.tools.singlify_str" href="#urilibplus.tools.singlify_str">singlify_str()</a></code></p>
+<h2 id="arguments">Arguments</h2>
+<p><code>*in_strs</code> &ndash; All strings to concatenate and singlify together.</p>
+<h2 id="returns">Returns</h2>
+<p>All <code>*in_strs</code> concatenated, with any duplicate characters removed, in no particular order.</p></div>
+</dd>
+<dt id="urilibplus.tools.slice_to_range"><code class="name flex">
+<span>def <span class="ident">slice_to_range</span></span>(<span>sl: slice, reference_length: Union[Sized, int]) ‑> range</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="urilibplus.tools.slice_to_range" href="#urilibplus.tools.slice_to_range">slice_to_range()</a></code></p>
+<p>Used to convert a <code>slice</code> object into a <code>range</code> object.</p>
+<h2 id="arguments">Arguments</h2>
+<p>sl &ndash; The source slice to convert.
+reference_length &ndash; The length of the object being sliced, or the <code>Sized</code> object itself.</p>
+<h2 id="returns">Returns</h2>
+<p>The generated range from the slice.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="urilibplus" href="index.html">urilibplus</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="urilibplus.tools.absindex" href="#urilibplus.tools.absindex">absindex</a></code></li>
+<li><code><a title="urilibplus.tools.iter_flatten" href="#urilibplus.tools.iter_flatten">iter_flatten</a></code></li>
+<li><code><a title="urilibplus.tools.passthrough_first" href="#urilibplus.tools.passthrough_first">passthrough_first</a></code></li>
+<li><code><a title="urilibplus.tools.singlify_str" href="#urilibplus.tools.singlify_str">singlify_str</a></code></li>
+<li><code><a title="urilibplus.tools.slice_to_range" href="#urilibplus.tools.slice_to_range">slice_to_range</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

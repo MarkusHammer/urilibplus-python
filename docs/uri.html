@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>urilibplus.uri API documentation</title>
+<meta name="description" content="`uri` …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>urilibplus.uri</code></h1>
+</header>
+<section id="section-intro">
+<p><code>uri</code></p>
+<p>Holds the <code><a title="urilibplus.uri.URI" href="#urilibplus.uri.URI">URI</a></code> class and reated imports.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="urilibplus.uri.URI"><code class="flex name class">
+<span>class <span class="ident">URI</span></span>
+<span>(</span><span>contents: Union[str, ForwardRef('<a title="urilibplus.uri.URI" href="#urilibplus.uri.URI">URI</a>'), urllib.parse.SplitResult, Tuple[str, str, str, str, str]], default_scheme: Optional[str] = None, *, unquote: bool = False, requote: bool = False, quote_safe: str = '')</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code><a title="urilibplus.uri.URI" href="#urilibplus.uri.URI">URI</a></code></p>
+<p>A python class used to interact and manipulate with
+uris in python in a easier and consistent manner.</p>
+<p>Sources:
+- <a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>
+- <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">https://en.wikipedia.org/wiki/Uniform_Resource_Identifier</a></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class URI:
+    &#34;&#34;&#34;
+    `URI`
+
+    A python class used to interact and manipulate with
+    uris in python in a easier and consistent manner.
+    
+    Sources:
+     - https://www.rfc-editor.org/rfc/rfc3986
+     - https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+    &#34;&#34;&#34;
+    CHARACTER_SETS = CharacterSets
+
+    quotestr = staticmethod(uriquote)
+    unquotestr = staticmethod(uriunquote)
+
+    @property
+    def authority(self) -&gt; str:
+        &#34;&#34;&#34;
+        `authority`
+
+        Returns:
+            The authority of the uri;
+            ie. the user, password, host, and port;
+            formatted as required.
+        &#34;&#34;&#34;
+        authority = &#34;&#34;
+        if self.user_info != &#34;&#34;:
+            authority = f&#34;{self.user_info}@&#34;
+        authority += f&#34;{self.host}&#34;
+        if self.port is not None and self.port &gt; 0:
+            authority += f&#34;:{self.port}&#34;
+        return authority
+    @authority.setter
+    def authority(self, value: str):
+        at_index = value.find(&#34;@&#34;)
+        if at_index &lt; 0:
+            self.user_info = &#34;&#34;
+        else:
+            self.user_info = value[:at_index]
+        value = value.replace(self.user_info, &#34;&#34;, 1).lstrip(&#34;@&#34;)
+
+        col_index = value.rfind(&#34;:&#34;)
+        if col_index &lt; 0:
+            self.port = None
+        else:
+            self.port = int(value[col_index+1:])
+            if self.port &lt; 0:
+                self.port = None
+        if self.port is not None:
+            value = value.replace(str(self.port), &#34;&#34;, 1).rstrip(&#34;:&#34;)
+
+        self.host = value
+
+    @property
+    def username(self) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        `username`
+
+        Returns:
+            The username in the uri, or None if no username in included.
+        &#34;&#34;&#34;
+        if self.userinfo.count(&#34;:&#34;) == 1:
+            return self.userinfo[:self.userinfo.find(&#34;:&#34;)]
+        else:
+            return None
+    @username.setter
+    def username(self, value: Union[None, str]):
+        if value is None:
+            self.userinfo = self.userinfo[self.userinfo.find(&#34;:&#34;)+1:]
+        else:
+            if self.userinfo[0] != &#34;:&#34; and self.username is None:
+                value += &#34;:&#34;
+            self.userinfo = value + \
+                self.userinfo[max(self.userinfo.find(&#34;:&#34;), 0):]
+
+    @property
+    def password(self) -&gt; Union[None, str]:
+        &#34;&#34;&#34;
+        `password`
+
+        Returns:
+            The password in the uri, or None if no password in included.
+        &#34;&#34;&#34;
+        if self.userinfo_string.count(&#34;:&#34;) == 1:
+            return self.userinfo_string[self.userinfo_string.find(&#34;:&#34;)+1:]
+        else:
+            return None
+    @password.setter
+    def password(self, value: Union[None, str]):
+        if value is None:
+            self.userinfo_string = self.userinfo_string[:self.userinfo_string.find(
+                &#34;:&#34;)]
+        else:
+            if self.userinfo_string[-1] != &#34;:&#34; and self.password is None:
+                value = &#34;:&#34; + value
+            self.userinfo_string = self.userinfo_string[:self.userinfo_string.find(
+                &#34;:&#34;)] + value
+
+    def __init__(self,
+                 contents:Union[str, &#39;URI&#39;, SplitResult, Tuple[str, str, str, str, str]],
+                 default_scheme: Optional[str] = None,
+                 *,
+                 unquote:bool = False,
+                 requote:bool = False,
+                 quote_safe:str = &#34;&#34;):
+        self.scheme: str
+        self.user_info: str = &#34;&#34;
+        self.host: str = &#34;&#34;
+        self.port: Optional[int] = None
+        self.path: Optional[&#39;URIPath&#39;] = None
+        self.query: Optional[&#39;URIQuery&#39;] = None
+        self.fragment: Optional[&#39;URIQuery&#39;] = None
+
+        if default_scheme is None:
+            default_scheme = &#34;&#34;
+
+        parsed = None
+        if isinstance(contents, SplitResult):
+            parsed = contents
+        elif isinstance(contents, tuple) and len(contents) &lt;= 5 and len(contents) &gt;= 1:
+            parsed = SplitResult(*contents)
+        else:
+            if isinstance(contents, URI):
+                contents = str(contents)
+            contents = contents.strip()
+            contents = uriunwrap(contents)
+            parsed = urisplit(contents, scheme=default_scheme, allow_fragments=True)
+
+        self.scheme = uriunquote(parsed.scheme) if unquote else parsed.scheme
+        self.authority = uriunquote(parsed.netloc) if unquote else parsed.netloc
+        self.path = URIPath(parsed.path.lstrip(&#34;/&#34;), unquote=unquote)
+        self.query = URIQuery(parsed.query, unquote=unquote)
+        self.fragment = URIQuery(parsed.fragment, unquote=unquote)
+
+        self.default_scheme = default_scheme
+        self.requote = requote
+        self.quote_safe = quote_safe
+
+    def __repr__(self):
+        return f&#34;&lt;URI object (url = {self.encode()}, valid = {self.validate()})&gt;&#34;
+
+    def __len__(self):
+        return len(self.encode())
+
+    def __contains__(self, value:str):
+        return value in self.encode()
+
+    def __iter__(self):
+        return iter(self.tupled())
+
+    def copy(self) -&gt; &#39;URI&#39;:
+        &#34;&#34;&#34;
+        `copy`
+
+        Returns:
+            A complete, deep, copy of this object.
+        &#34;&#34;&#34;
+        return URI(self.splitted(False),
+                   default_scheme=self.default_scheme,
+                   unquote=False,
+                   requote=self.requote,
+                   quote_safe=self.quote_safe
+                  )
+    __copy__ = copy
+    __deepcopy__ = copy
+
+    def tupled(self,
+               quote: Optional[bool] = None,
+               quote_safe:Optional[str] = None
+              ) -&gt; Tuple[str, str, str, str, str]:
+        &#34;&#34;&#34;
+        `tupled`
+        
+        Returns this object formated as a `tuple`,
+        a ordered in the commonly used order used in native python uri related functions.
+
+        Keyword Arguments:
+            quoted -- If not `None`, the URI will be quoted, if `True`; or unquoted, if `False`,
+                with `None` defaulting to the objects `quote` attribute.
+            quote_safe -- If quoting, these characters will be excluded when quoting.
+
+        Returns:
+            This object as a `tuple`.
+        &#34;&#34;&#34;
+        if quote is None:
+            quote = self.requote
+
+        if quote_safe is None:
+            quote_safe = self.quote_safe
+
+        return (uriquote(self.scheme, quote_safe) if quote else self.scheme,
+                uriquote(self.authority, quote_safe) if quote else self.authority,
+                &#34;&#34; if self.path is None else self.path.encode(quote, quote_safe),
+                &#34;&#34; if self.query is None else self.query.encode(quote, quote_safe),
+                &#34;&#34; if self.fragment is None else self.fragment.encode(quote, quote_safe)
+               )
+
+    def splitted(self,
+                 quote: Optional[bool] = None,
+                 quote_safe:Optional[str] = None
+                ) -&gt; SplitResult:
+        &#34;&#34;&#34;
+        `splitted`
+        
+        Returns this object formated as a `SplitResult`,
+        a native object commonly used with native python uri related functions.
+
+        Keyword Arguments:
+            quoted -- If not `None`, the URI will be quoted, if `True`; or unquoted, if `False`,
+                with `None` defaulting to the objects `quote` attribute.
+            quote_safe -- If quoting, these characters will be excluded when quoting.
+
+        Returns:
+            This object as a `SplitResult`.
+        &#34;&#34;&#34;
+        return SplitResult(*self.tupled(quote, quote_safe))
+
+    def encode(self, quote: Optional[bool] = None, quote_safe:Optional[str] = None) -&gt; str:
+        &#34;&#34;&#34;
+        `encode`
+
+        Keyword Arguments:
+            quoted -- If not `None`, the URI will be quoted, if `True`; or unquoted, if `False`,
+                with `None` defaulting to the objects `quote` attribute.
+            quote_safe -- If quoting, these characters will be excluded when quoting.
+
+        Returns:
+            The URI object, encoded as a string.
+        &#34;&#34;&#34;
+
+        if quote is None:
+            quote = self.requote
+
+        if quote_safe is None:
+            quote_safe = self.quote_safe
+
+        encoded = uriunsplit(SplitResult(*self.tupled(None, None)))
+        if quote is True:
+            encoded = uriquote(encoded, safe = quote_safe)
+        elif quote is False:
+            encoded = uriunquote(encoded)
+        return encoded
+    __str__ = encode
+    __repr__ = encode
+
+    def stripped(self, quote: Optional[bool] = None, quote_safe:Optional[str] = None) -&gt; str:
+        &#34;&#34;&#34;
+        `stripped`
+
+        Keyword Arguments:
+            quoted -- If not `None`, the URI will be quoted, if `True`; or unquoted, if `False`,
+                with `None` defaulting to the objects `quote` attribute.
+            quote_safe -- If quoting, these characters will be excluded when quoting.
+
+        Returns:
+            The URI without any fragment or query, ie. the URI with only its
+            scheme and authority (host, user, password, and port) and path
+        &#34;&#34;&#34;
+        if quote is None:
+            quote = self.requote
+
+        if quote_safe is None:
+            quote_safe = self.quote_safe
+
+        encoded = uriunsplit(SplitResult(*self.tupled(quote, quote_safe)[:3], &#34;&#34;, &#34;&#34;))
+
+        if quote is True:
+            encoded = uriquote(encoded, safe = quote_safe)
+        elif quote is False:
+            encoded = uriunquote(encoded)
+        return encoded
+
+    def root(self, quote: Optional[bool] = None, quote_safe:Optional[str] = None) -&gt; str:
+        &#34;&#34;&#34;
+        `root`
+
+        Keyword Arguments:
+            quoted -- If not `None`, the URI will be quoted, if `True`; or unquoted, if `False`,
+                with `None` defaulting to the objects `quote` attribute.
+            quote_safe -- If quoting, these characters will be excluded when quoting.
+
+        Returns:
+            The URI&#39;s root path, ie. the URI with only its
+            scheme and authority (host, user, password, and port)
+        &#34;&#34;&#34;
+        if quote is None:
+            quote = self.requote
+
+        if quote_safe is None:
+            quote_safe = self.quote_safe
+
+        encoded = uriunsplit(SplitResult(*self.tupled(quote, quote_safe)[:2], &#34;&#34;, &#34;&#34;, &#34;&#34;))
+
+        if quote is True:
+            encoded = uriquote(encoded, safe = quote_safe)
+        elif quote is False:
+            encoded = uriunquote(encoded)
+        return encoded
+
+    def validate(self) -&gt; bool:
+        &#34;&#34;&#34;
+        `validate`
+
+        Returns:
+            True if all characters in this object are allowed in a URI.
+        &#34;&#34;&#34;
+        for char in self.scheme:
+            if char not in self.CHARACTER_SETS.SCHEME:
+                return False
+
+        for char in self.user_info:
+            if char not in self.CHARACTER_SETS.USERINFO:
+                return False
+
+        for char in self.host:
+            if char not in self.CHARACTER_SETS.HOST:
+                return False
+
+        if not (isinstance(self.port, int) or self.port is None):
+            return False
+
+        if self.path is None:
+            return False
+        elif isinstance(self.path, URIPath) and not self.path.validate():
+            return False
+        else:
+            for char in self.host:
+                if char not in self.CHARACTER_SETS.PATH:
+                    return False
+
+        if isinstance(self.query, URIQuery) and not self.query.validate():
+            return False
+        else:
+            for char in self.host:
+                if char not in self.CHARACTER_SETS.QUERY:
+                    return False
+
+        for char in str(self.fragment):
+            if char not in self.CHARACTER_SETS.FRAGMENT:
+                return False
+
+        # This is specifically stated as invalid in the specs
+        if self.authority == &#34;&#34; and self.path[0] == &#34;&#34;:
+            return False
+        return True
+
+    # NOTE this doesn&#39;t test all parts fo the URI, just the required parts!
+    def isempty(self) -&gt; bool:
+        &#34;&#34;&#34;
+        `isempty`
+
+        Returns:
+            True if the given url&#39;s scheme or path are blank.
+        &#34;&#34;&#34;
+        return self.scheme == &#34;&#34; or (self.path is None or self.path.isempty())
+    __bool__ = isempty
+
+    def search(self,
+               pattern:Union[str, Pattern],
+               quoted: Optional[bool] = None,
+               quote_safe:Optional[str] = None
+              ) -&gt; Optional[Match]:
+        &#34;&#34;&#34;
+        `search`
+
+        A simple shorcut to regex `search` this url, returning the `Match`,
+        or `None` if there was no matches.
+
+        Arguments:
+            `pattern` -- The pattern to check the url with.
+
+        Keyword Arguments:
+            quoted -- If not `None`, the URI will be quoted, if `True`; or unquoted, if `False`,
+                with `None` defaulting to the objects `quote` attribute.
+            quote_safe -- If quoting, these characters will be excluded when quoting.
+
+        Returns:
+            `None` if not matches where found, or a `Match` object otherwise.
+        &#34;&#34;&#34;
+        if isinstance(pattern, str):
+            pattern = regexcompile(pattern)
+
+        return pattern.search(self.encode(quoted, quote_safe))
+
+    def pathappend(self, *parts:Union[str, PathLike]):
+        &#34;&#34;&#34;
+        `pathappend`
+        
+        A simple shorcut to append to the path directly from the this
+        object, if a path is defined.
+        
+        Will initialise `path` if `path` is None.
+        
+        Arguments:
+            `*parts` -- The parts to be appended to the path, in order.
+        &#34;&#34;&#34;
+        if self.path is None:
+            self.path = URIPath()
+        self.path.append(parts)
+
+    def __truediv__(self, value:Union[str, PathLike]) -&gt; &#39;URI&#39;:
+        cpy = self.copy()
+        cpy.pathappend(value)
+        return cpy
+
+    def __floordiv__(self, value:Union[str, PathLike]) -&gt; &#39;URI&#39;:
+        cpy = self.copy()
+        cpy.pathappend(&#34;&#34;, value)
+        return cpy</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="urilibplus.uri.URI.CHARACTER_SETS"><code class="name">var <span class="ident">CHARACTER_SETS</span></code></dt>
+<dd>
+<div class="desc"><p><code>CharacterSets</code></p>
+<p>Holds the character literals and related functions for the <code><a title="urilibplus" href="index.html">urilibplus</a></code> module.</p>
+<p>Sources:
+- <a href="https://www.rfc-editor.org/rfc/rfc3986">https://www.rfc-editor.org/rfc/rfc3986</a>
+- <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">https://en.wikipedia.org/wiki/Uniform_Resource_Identifier</a></p></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="urilibplus.uri.URI.quotestr"><code class="name flex">
+<span>def <span class="ident">quotestr</span></span>(<span>string, safe='/', encoding=None, errors=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>quote('abc def') -&gt; 'abc%20def'</p>
+<p>Each part of a URL, e.g. the path info, the query, etc., has a
+different set of reserved characters that must be quoted. The
+quote function offers a cautious (not minimal) way to quote a
+string for most of these parts.</p>
+<p>RFC 3986 Uniform Resource Identifier (URI): Generic Syntax lists
+the following (un)reserved characters.</p>
+<p>unreserved
+= ALPHA / DIGIT / "-" / "." / "_" / "~"
+reserved
+= gen-delims / sub-delims
+gen-delims
+= ":" / "/" / "?" / "#" / "[" / "]" / "@"
+sub-delims
+= "!" / "$" / "&amp;" / "'" / "(" / ")"
+/ "*" / "+" / "," / ";" / "="</p>
+<p>Each of the reserved characters is reserved in some component of a URL,
+but not necessarily in all of them.</p>
+<p>The quote function %-escapes all characters that are neither in the
+unreserved chars ("always safe") nor the additional chars set via the
+safe arg.</p>
+<p>The default for the safe arg is '/'. The character is reserved, but in
+typical usage the quote function is being called on a path where the
+existing slash characters are to be preserved.</p>
+<p>Python 3.7 updates from using RFC 2396 to RFC 3986 to quote URL strings.
+Now, "~" is included in the set of unreserved characters.</p>
+<p>string and safe may be either str or bytes objects. encoding and errors
+must not be specified if string is a bytes object.</p>
+<p>The optional encoding and errors parameters specify how to deal with
+non-ASCII characters, as accepted by the str.encode method.
+By default, encoding='utf-8' (characters are encoded with UTF-8), and
+errors='strict' (unsupported characters raise a UnicodeEncodeError).</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.unquotestr"><code class="name flex">
+<span>def <span class="ident">unquotestr</span></span>(<span>string, encoding='utf-8', errors='replace')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Replace %xx escapes by their single-character equivalent. The optional
+encoding and errors parameters specify how to decode percent-encoded
+sequences into Unicode characters, as accepted by the bytes.decode()
+method.
+By default, percent-encoded sequences are decoded with UTF-8, and invalid
+sequences are replaced by a placeholder character.</p>
+<p>unquote('abc%20def') -&gt; 'abc def'.</p></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="urilibplus.uri.URI.authority"><code class="name">prop <span class="ident">authority</span> : str</code></dt>
+<dd>
+<div class="desc"><p><code>authority</code></p>
+<h2 id="returns">Returns</h2>
+<p>The authority of the uri;
+ie. the user, password, host, and port;
+formatted as required.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def authority(self) -&gt; str:
+    &#34;&#34;&#34;
+    `authority`
+
+    Returns:
+        The authority of the uri;
+        ie. the user, password, host, and port;
+        formatted as required.
+    &#34;&#34;&#34;
+    authority = &#34;&#34;
+    if self.user_info != &#34;&#34;:
+        authority = f&#34;{self.user_info}@&#34;
+    authority += f&#34;{self.host}&#34;
+    if self.port is not None and self.port &gt; 0:
+        authority += f&#34;:{self.port}&#34;
+    return authority</code></pre>
+</details>
+</dd>
+<dt id="urilibplus.uri.URI.password"><code class="name">prop <span class="ident">password</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p><code>password</code></p>
+<h2 id="returns">Returns</h2>
+<p>The password in the uri, or None if no password in included.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def password(self) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    `password`
+
+    Returns:
+        The password in the uri, or None if no password in included.
+    &#34;&#34;&#34;
+    if self.userinfo_string.count(&#34;:&#34;) == 1:
+        return self.userinfo_string[self.userinfo_string.find(&#34;:&#34;)+1:]
+    else:
+        return None</code></pre>
+</details>
+</dd>
+<dt id="urilibplus.uri.URI.username"><code class="name">prop <span class="ident">username</span> : Optional[str]</code></dt>
+<dd>
+<div class="desc"><p><code>username</code></p>
+<h2 id="returns">Returns</h2>
+<p>The username in the uri, or None if no username in included.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def username(self) -&gt; Union[None, str]:
+    &#34;&#34;&#34;
+    `username`
+
+    Returns:
+        The username in the uri, or None if no username in included.
+    &#34;&#34;&#34;
+    if self.userinfo.count(&#34;:&#34;) == 1:
+        return self.userinfo[:self.userinfo.find(&#34;:&#34;)]
+    else:
+        return None</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="urilibplus.uri.URI.copy"><code class="name flex">
+<span>def <span class="ident">copy</span></span>(<span>self) ‑> <a title="urilibplus.uri.URI" href="#urilibplus.uri.URI">URI</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>copy</code></p>
+<h2 id="returns">Returns</h2>
+<p>A complete, deep, copy of this object.</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.encode"><code class="name flex">
+<span>def <span class="ident">encode</span></span>(<span>self, quote: Optional[bool] = None, quote_safe: Optional[str] = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>encode</code></p>
+<p>Keyword Arguments:
+quoted &ndash; If not <code>None</code>, the URI will be quoted, if <code>True</code>; or unquoted, if <code>False</code>,
+with <code>None</code> defaulting to the objects <code>quote</code> attribute.
+quote_safe &ndash; If quoting, these characters will be excluded when quoting.</p>
+<h2 id="returns">Returns</h2>
+<p>The URI object, encoded as a string.</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.isempty"><code class="name flex">
+<span>def <span class="ident">isempty</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>isempty</code></p>
+<h2 id="returns">Returns</h2>
+<p>True if the given url's scheme or path are blank.</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.pathappend"><code class="name flex">
+<span>def <span class="ident">pathappend</span></span>(<span>self, *parts: Union[str, os.PathLike])</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>pathappend</code></p>
+<p>A simple shorcut to append to the path directly from the this
+object, if a path is defined.</p>
+<p>Will initialise <code>path</code> if <code>path</code> is None.</p>
+<h2 id="arguments">Arguments</h2>
+<p><code>*parts</code> &ndash; The parts to be appended to the path, in order.</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.root"><code class="name flex">
+<span>def <span class="ident">root</span></span>(<span>self, quote: Optional[bool] = None, quote_safe: Optional[str] = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>root</code></p>
+<p>Keyword Arguments:
+quoted &ndash; If not <code>None</code>, the URI will be quoted, if <code>True</code>; or unquoted, if <code>False</code>,
+with <code>None</code> defaulting to the objects <code>quote</code> attribute.
+quote_safe &ndash; If quoting, these characters will be excluded when quoting.</p>
+<h2 id="returns">Returns</h2>
+<p>The URI's root path, ie. the URI with only its
+scheme and authority (host, user, password, and port)</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.search"><code class="name flex">
+<span>def <span class="ident">search</span></span>(<span>self, pattern: Union[str, re.Pattern], quoted: Optional[bool] = None, quote_safe: Optional[str] = None) ‑> Optional[re.Match]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>search</code></p>
+<p>A simple shorcut to regex <code>search</code> this url, returning the <code>Match</code>,
+or <code>None</code> if there was no matches.</p>
+<h2 id="arguments">Arguments</h2>
+<p><code>pattern</code> &ndash; The pattern to check the url with.</p>
+<p>Keyword Arguments:
+quoted &ndash; If not <code>None</code>, the URI will be quoted, if <code>True</code>; or unquoted, if <code>False</code>,
+with <code>None</code> defaulting to the objects <code>quote</code> attribute.
+quote_safe &ndash; If quoting, these characters will be excluded when quoting.</p>
+<h2 id="returns">Returns</h2>
+<p><code>None</code> if not matches where found, or a <code>Match</code> object otherwise.</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.splitted"><code class="name flex">
+<span>def <span class="ident">splitted</span></span>(<span>self, quote: Optional[bool] = None, quote_safe: Optional[str] = None) ‑> urllib.parse.SplitResult</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>splitted</code></p>
+<p>Returns this object formated as a <code>SplitResult</code>,
+a native object commonly used with native python uri related functions.</p>
+<p>Keyword Arguments:
+quoted &ndash; If not <code>None</code>, the URI will be quoted, if <code>True</code>; or unquoted, if <code>False</code>,
+with <code>None</code> defaulting to the objects <code>quote</code> attribute.
+quote_safe &ndash; If quoting, these characters will be excluded when quoting.</p>
+<h2 id="returns">Returns</h2>
+<p>This object as a <code>SplitResult</code>.</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.stripped"><code class="name flex">
+<span>def <span class="ident">stripped</span></span>(<span>self, quote: Optional[bool] = None, quote_safe: Optional[str] = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>stripped</code></p>
+<p>Keyword Arguments:
+quoted &ndash; If not <code>None</code>, the URI will be quoted, if <code>True</code>; or unquoted, if <code>False</code>,
+with <code>None</code> defaulting to the objects <code>quote</code> attribute.
+quote_safe &ndash; If quoting, these characters will be excluded when quoting.</p>
+<h2 id="returns">Returns</h2>
+<p>The URI without any fragment or query, ie. the URI with only its
+scheme and authority (host, user, password, and port) and path</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.tupled"><code class="name flex">
+<span>def <span class="ident">tupled</span></span>(<span>self, quote: Optional[bool] = None, quote_safe: Optional[str] = None) ‑> Tuple[str, str, str, str, str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>tupled</code></p>
+<p>Returns this object formated as a <code>tuple</code>,
+a ordered in the commonly used order used in native python uri related functions.</p>
+<p>Keyword Arguments:
+quoted &ndash; If not <code>None</code>, the URI will be quoted, if <code>True</code>; or unquoted, if <code>False</code>,
+with <code>None</code> defaulting to the objects <code>quote</code> attribute.
+quote_safe &ndash; If quoting, these characters will be excluded when quoting.</p>
+<h2 id="returns">Returns</h2>
+<p>This object as a <code>tuple</code>.</p></div>
+</dd>
+<dt id="urilibplus.uri.URI.validate"><code class="name flex">
+<span>def <span class="ident">validate</span></span>(<span>self) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p><code>validate</code></p>
+<h2 id="returns">Returns</h2>
+<p>True if all characters in this object are allowed in a URI.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="urilibplus" href="index.html">urilibplus</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="urilibplus.uri.URI" href="#urilibplus.uri.URI">URI</a></code></h4>
+<ul class="two-column">
+<li><code><a title="urilibplus.uri.URI.copy" href="#urilibplus.uri.URI.copy">copy</a></code></li>
+<li><code><a title="urilibplus.uri.URI.encode" href="#urilibplus.uri.URI.encode">encode</a></code></li>
+<li><code><a title="urilibplus.uri.URI.isempty" href="#urilibplus.uri.URI.isempty">isempty</a></code></li>
+<li><code><a title="urilibplus.uri.URI.pathappend" href="#urilibplus.uri.URI.pathappend">pathappend</a></code></li>
+<li><code><a title="urilibplus.uri.URI.quotestr" href="#urilibplus.uri.URI.quotestr">quotestr</a></code></li>
+<li><code><a title="urilibplus.uri.URI.root" href="#urilibplus.uri.URI.root">root</a></code></li>
+<li><code><a title="urilibplus.uri.URI.search" href="#urilibplus.uri.URI.search">search</a></code></li>
+<li><code><a title="urilibplus.uri.URI.splitted" href="#urilibplus.uri.URI.splitted">splitted</a></code></li>
+<li><code><a title="urilibplus.uri.URI.stripped" href="#urilibplus.uri.URI.stripped">stripped</a></code></li>
+<li><code><a title="urilibplus.uri.URI.tupled" href="#urilibplus.uri.URI.tupled">tupled</a></code></li>
+<li><code><a title="urilibplus.uri.URI.unquotestr" href="#urilibplus.uri.URI.unquotestr">unquotestr</a></code></li>
+<li><code><a title="urilibplus.uri.URI.validate" href="#urilibplus.uri.URI.validate">validate</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>
