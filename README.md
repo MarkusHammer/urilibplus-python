@@ -3,6 +3,9 @@
 
 > A Python Module for URI Manipulation. Inspired by `pathlib`, but for URIs.
 
+[![CodeQL](https://github.com/MarkusHammer/urilibplus-python/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/MarkusHammer/urilibplus-python/actions/workflows/github-code-scanning/codeql) [![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/markushammer)
+
+
 `urilibplus` is a Python module designed to simplify the interaction and manipulation of URIs. It provides the `URI` class, which encapsulates URI operations into a consistent and user-friendly interface.
 With this module, you can easily handle URIs, including tasks such as encoding, validation, and manipulation.
 
